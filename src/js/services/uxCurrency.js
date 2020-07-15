@@ -38,6 +38,7 @@ angular.module('copayApp.services')
         };
 
         root._set = function(lang) {
+            lang = 'en'
             $log.debug('Setting default currency: ' + lang);
             amMoment.changeLocale(lang);
             root.currentCurrency = lang;
