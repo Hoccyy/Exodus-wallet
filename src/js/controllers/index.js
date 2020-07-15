@@ -1720,7 +1720,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
                         ammountFro: profileService.formatAmount(ammount_ETH, 'eth')
                     },
                     ammount_EXO: {
-                        ammount: ammount_EXO / configService.getUnitValue('exo'),
+                        ammount: new bignumber(ammount_EXO).div(configService.getUnitValue('exo')).toFixed(),
                         ammountFro: profileService.formatAmount(ammount_EXO, 'exo')
                     },
                     ammount_SNC: {
