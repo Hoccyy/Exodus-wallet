@@ -2066,7 +2066,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
     });
 
     $rootScope.$on('Local/NeedFreshHistory', function (event) {
-        breadcrumbs.add('NeedFreshHistory');
+        breadcrumbs.add('NeedFreshHistory')
         self.updateTxHistory(3);
     });
 
