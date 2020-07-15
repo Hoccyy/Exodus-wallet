@@ -2048,7 +2048,7 @@ angular.module('copayApp.controllers').controller('indexController', function ($
 
     $rootScope.$on('Local/NewFocusedWallet', function () {
         self.setUxLanguage();
-        self.setUxCurrency();
+        // self.setUxCurrency();
     });
 
     $rootScope.$on('Local/LanguageSettingUpdated', function () {
