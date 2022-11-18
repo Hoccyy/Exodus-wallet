@@ -34,6 +34,7 @@ var getDir = function(cb) {
 	// This could be needed for windows
 	// if (cordova.file === undefined) {
 	//   url = 'ms-appdata:///local/';
+	
 	window.resolveLocalFileSystemURL(url, function(dir) {
 		return cb(null, dir);
 	}, function(err) {
@@ -44,6 +45,7 @@ var getDir = function(cb) {
 
 var get = function(k, cb) {
 	init(function(err, fs, dir) {
+		
 		if (err) return cb(err);
 		dir.getFile(k, {
 			create: false
@@ -75,7 +77,7 @@ var set = function(k, v, cb) {
 			create: true
 		}, function(fileEntry) {
 			// Create a FileWriter object for our FileEntry (log.txt).
-			fileEntry.createWriter(function(fileWriter) {
+			fileEntry.createWriter (function(fileWriter) {
 
 				fileWriter.onwriteend = function(e) {
 					console.log('Write completed.');
@@ -85,7 +87,7 @@ var set = function(k, v, cb) {
 				fileWriter.onerror = function(e) {
 					var err = e.error ? e.error : JSON.stringify(e);
 					console.log('Write failed: ' + err);
-					return cb('Fail to write:' + err);
+					return cb('Fail to write: ' + err);
 				};
 
 				if (lodash.isObject(v))
